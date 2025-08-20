@@ -1,0 +1,36 @@
+@import "./reset.scss";
+$white-color: #ffffff;
+$bg-color: #262833;
+$text-styles: (
+  credit-card-number-text: (
+    font-size: 1.25rem,
+    font-weight: 800,
+    color: $white-color,
+  ),
+  price-text: (
+    font-size: 1.5rem,
+    font-weight: 700,
+    color: $white-color,
+  ),
+  body-text: (
+    font-size: 1rem,
+    font-weight: 500,
+    color: $white-color,
+  ),
+  label-text: (
+    font-size: 1rem,
+    font-weight: 400,
+    color: $white-color,
+  ),
+);
+@mixin text-format($type) {
+  font-size: map-get(map-get($text-styles, $type), font-size);
+  font-weight: map-get(map-get($text-styles, $type), font-weight);
+  color: map-get(map-get($text-styles, $type), color);
+}
+.wrapper {
+  min-height: 100vh;
+  min-width: 100%;
+  background-color: $bg-color;
+  font-family: "Outfit", sans-serif;
+}
