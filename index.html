@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
@@ -24,12 +31,148 @@
         </div>
       </header>
       <div class="layout">
-        <nav class="navigation">
-          <ul></ul>
+        <nav class="navigation" aria-label="Main navigation">
+          <div class="container">
+            <ul class="nav-group">
+              <li class="nav-group__item">
+                <a href="">
+                  <img src="./img/House.svg" alt="Dashboard" aria-hidden="true" />
+                  Dashboard
+                </a>
+              </li>
+            </ul>
+            <h2 class="nav-heading">Analytics</h2>
+            <ul class="nav-group">
+              <li class="nav-group__item">
+                <a href="">
+                  <img src="./img/show chart-1.svg" alt="Performance" aria-hidden="true" />
+                  Performance
+                </a>
+              </li>
+              <li class="nav-group__item">
+                <a href="">
+                  <img src="./img/Archery.svg" alt="Hotjar" aria-hidden="true" />
+                  Hotjar
+                  <span class="badge">New</span>
+                </a>
+              </li>
+            </ul>
+            <h2 class="nav-heading">Support</h2>
+            <ul class="nav-group">
+              <li class="nav-group__item">
+                <a href="">
+                  <img src="./img/ticket.svg" alt="Tickets" aria-hidden="true" />
+                  Tickets
+                  <span class="badge">18</span>
+                </a>
+              </li>
+              <li class="nav-group__item">
+                <a href="">
+                  <img src="./img/account.svg" alt="Agents" aria-hidden="true" />
+                  Agents
+                </a>
+              </li>
+              <li class="nav-group__item">
+                <a href="">
+                  <img src="./img/users.svg" alt="Customers" aria-hidden="true" />
+                  Customers
+                </a>
+              </li>
+            </ul>
+            <h2 class="nav-heading">Shop</h2>
+            <ul class="nav-group">
+              <li class="nav-group__item">
+                <a href="">
+                  <img src="./img/shop.svg" alt="Products" aria-hidden="true" />
+                  Products
+                </a>
+              </li>
+              <li class="nav-group__item">
+                <a href="">
+                  <img src="./img/basket.svg" alt="Orders" aria-hidden="true" />
+                  Orders
+                </a>
+              </li>
+              <li class="nav-group__item">
+                <a href="">
+                  <img src="./img/chat info.svg" alt="Reports" aria-hidden="true" />
+                  Reports
+                </a>
+              </li>
+            </ul>
+            <ul class="nav-group">
+              <li class="nav-group__item">
+                <a href="">
+                  <img src="./img/Setting.svg" alt="Setting" aria-hidden="true" />
+                  Settings
+                </a>
+              </li>
+              <li class="nav-group__item">
+                <a href="">
+                  <img src="./img/Logout.svg" alt="Logout" aria-hidden="true" />
+                  Logout
+                </a>
+              </li>
+            </ul>
+          </div>
         </nav>
         <main class="main">
-          <section class=""></section>
-          <aside class="aside"></aside>
+          <div class="container">
+            <section class="inventory-section">
+              <h2 class="inventory-section__title">Inventory Details</h2>
+              <div class="total-details">
+                <span class="total-details__name">Your balance:</span>
+                <span class="total-details__check">$25,330</span>
+                <span class="total-details__quantity">3 cards</span>
+                <button class="details-btn">Details <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+              <h2 class="inventory-section__title">Inventory Details <span class="badge">2</span></h2>
+              <ul class="card-list">
+                <li class="card-list__item card">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </li>
+                <li class="card-list__item card"></li>
+                <button class="add-card-button"><i class="fa-solid fa-plus"></i> Add Card</button>
+              </ul>
+              <ul class="money-overview">
+                <li class="money-overview__item overview-item">
+                  <img class="overview-item__img" src="./img/show chart.svg" alt="" aria-hidden="true" />
+                  <div class="overview-item__text">
+                    <span class="overview-item__name">Earnings</span>
+                    <span class="overview-item__check">$12,341</span>
+                  </div>
+                </li>
+                <li class="money-overview__item overview-item">
+                  <img class="overview-item__img" src="./img/dollar coin.svg" alt="" aria-hidden="true" />
+                  <div class="overview-item__text">
+                    <span class="overview-item__name">Spendings</span>
+                    <span class="overview-item__check">$4,009</span>
+                  </div>
+                </li>
+                <li class="money-overview__item overview-item">
+                  <img class="overview-item__img" src="./img/aim.svg" alt="" aria-hidden="true" />
+                  <div class="overview-item__text">
+                    <span class="overview-item__name">Goals</span>
+                    <span class="overview-item__check">$8,098</span>
+                  </div>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div class="container">
+            <aside class="card-details">
+              <h2 class="card-details__title">Card details</h2>
+              <div class="card"></div>
+              <div class="card-details__description">
+                <span></span>
+              </div>
+            </aside>
+          </div>
         </main>
       </div>
     </div>

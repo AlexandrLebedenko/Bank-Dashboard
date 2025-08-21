@@ -1,6 +1,10 @@
 @import "./reset.scss";
 $white-color: #ffffff;
+$black-color: #262833;
+$light-gray-color: #6c727f;
+$gray-color: #43454d;
 $bg-color: #262833;
+$icon-color: #73b06f, #a686c4, #e9ae79;
 $text-styles: (
   credit-card-number-text: (
     font-size: 1.25rem,
@@ -35,10 +39,20 @@ $text-styles: (
   font-family: "Outfit", sans-serif;
 }
 .header {
-  padding: 1.25rem 1.5rem;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1.25rem 1.5rem;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    border-top: 1px solid $light-gray-color;
+  }
 }
 .logo-img {
   max-width: 100%;
@@ -60,4 +74,165 @@ $text-styles: (
 }
 .container {
   padding: 1.5rem;
+}
+////////
+.layout {
+  display: flex;
+}
+.navigation {
+  max-width: 13.75rem;
+  position: relative;
+  border-right: 1px solid $light-gray-color;
+}
+.container {
+  padding: 1.5rem;
+}
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+  &__item {
+    @include text-format(body-text);
+    a {
+      display: flex;
+      gap: 0.625rem;
+    }
+  }
+}
+.nav-heading {
+  @include text-format(body-text);
+  color: $light-gray-color;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+.badge {
+  @include text-format(label-text);
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 300;
+  background-color: $gray-color;
+  border-radius: 2rem;
+}
+//////////
+.main {
+  display: flex;
+}
+.total-details {
+  position: relative;
+  background: linear-gradient(to right, #e3ece6 50%, #73b06f 50%);
+  z-index: 1;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2.25rem;
+  &__name {
+    @include text-format(body-text);
+    display: block;
+    color: $black-color;
+    margin-bottom: 1rem;
+  }
+  &__check {
+    @include text-format(price-text);
+    display: block;
+    color: $black-color;
+    margin-bottom: 1rem;
+  }
+  &__quantity {
+    @include text-format(body-text);
+    display: block;
+    color: $black-color;
+  }
+  // &::after {
+  //   content: "";
+  //   display: block;
+  //   position: absolute;
+  //   background-image: url(../img/background-decor.svg);
+  //   background-repeat: no-repeat;
+  //   top: 0;
+  //   right: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   z-index: 3;
+  // }
+}
+.details-btn {
+  @include text-format(body-text);
+  font-weight: 500;
+  color: $black-color;
+  background-color: #e3ece6;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  padding: 0.5rem 1rem;
+  margin: 0 24px 24px 0;
+  border-radius: 2rem;
+}
+////////////
+.add-card-button {
+  @include text-format(body-text);
+  min-width: 220px;
+  min-height: 220px;
+  border: 2px dashed $light-gray-color;
+  border-radius: 1rem;
+}
+.inventory-section {
+  padding: 1.5rem;
+  border: 1px solid $light-gray-color;
+  border-radius: 1rem;
+  &__title {
+    @include text-format(body-text);
+    margin-bottom: 2.25rem;
+    span {
+      margin-left: 0.75rem;
+    }
+  }
+}
+
+.card-list {
+  margin-bottom: 2.25rem;
+  &__item {
+    gap: 1.5rem;
+  }
+}
+///////////
+.money-overview {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  gap: 1.5rem;
+  border: 1px solid $light-gray-color;
+  border-radius: 1rem;
+}
+.overview-item {
+  display: flex;
+  align-items: center;
+  &__img {
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__name {
+    @include text-format(body-text);
+    display: block;
+    color: $light-gray-color;
+    margin-bottom: 0.25rem;
+  }
+  &__check {
+    @include text-format(price-text);
+    display: block;
+  }
+}
+@for $i from 1 to 4 {
+  .overview-item:nth-child(#{$i}) {
+    .overview-item__img {
+      background-color: nth($icon-color, $i);
+    }
+  }
 }
